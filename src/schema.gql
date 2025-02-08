@@ -20,21 +20,11 @@ type EntranceFee {
   title: String!
 }
 
-type Topic {
-  id: String!
-  name: String!
-}
-
 type Multimedia {
   title: String!
   id: String!
   type: String!
   url: String!
-}
-
-type Activity {
-  id: String!
-  name: String!
 }
 
 type OperatingHourStandardHours {
@@ -92,6 +82,20 @@ type Image {
   url: String!
 }
 
+type ParksResponse {
+  total: String!
+  data: [Park!]!
+  limit: String!
+  start: String!
+}
+
+type Activity {
+  total: String!
+  data: [String!]!
+  limit: String!
+  start: String!
+}
+
 type Park {
   states: [String!]!
   weatherInfo: String!
@@ -119,9 +123,9 @@ type Park {
   description: String!
 }
 
-type ParksResponse {
+type Topic {
   total: String!
-  data: [Park!]!
+  data: [String!]!
   limit: String!
   start: String!
 }

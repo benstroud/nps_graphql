@@ -43,15 +43,6 @@ export class EntranceFee {
 }
 
 @ObjectType()
-export class Topic {
-  @Field()
-  id: string;
-
-  @Field()
-  name: string;
-}
-
-@ObjectType()
 export class Multimedia {
   @Field()
   title: string;
@@ -64,15 +55,6 @@ export class Multimedia {
 
   @Field()
   url: string;
-}
-
-@ObjectType()
-export class Activity {
-  @Field()
-  id: string;
-
-  @Field()
-  name: string;
 }
 
 @ObjectType()
@@ -193,6 +175,288 @@ export class Image {
 }
 
 @ObjectType()
+export class ParksResponse {
+  @Field(() => String)
+  total: string;
+
+  @Field(() => [Park])
+  data: Park[];
+
+  @Field(() => String)
+  limit: string;
+
+  @Field(() => String)
+  start: string;
+}
+
+@ObjectType()
+export class Activity {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class ActivityPark {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Alert {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Amenities {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class AmenitiesParksPlaces {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class AmenitiesParksVisitorCenters {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Article {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Campground {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Event {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class FeesPasses {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class LessonPlan {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class MapdataParkboundary {
+  @Field()
+  type: string;
+
+  @Field()
+  id: string;
+
+  @Field(() => [String])
+  coordinates: string[];
+}
+
+@ObjectType()
+export class MultimediaAudio {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class MultimediaGalleries {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class MultimediaGalleriesAssets {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class MultimediaVideos {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class NewsRelease {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Parkinglot {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
 export class Park {
   @Field(() => [String])
   states: string[];
@@ -268,16 +532,145 @@ export class Park {
 }
 
 @ObjectType()
-export class ParksResponse {
-  @Field(() => String)
+export class Passportstamplocations {
+  @Field()
   total: string;
 
-  @Field(() => [Park])
-  data: Park[];
+  @Field(() => [String])
+  data: string[];
 
-  @Field(() => String)
+  @Field()
   limit: string;
 
-  @Field(() => String)
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Person {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Place {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class RoadEvents {
+  @Field(() => [String])
+  features: string[];
+
+  @Field()
+  type: string;
+}
+
+@ObjectType()
+export class ThingsToDo {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Topic {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class TopicPark {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Tours {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class VisitorCenter {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
+  start: string;
+}
+
+@ObjectType()
+export class Webcams {
+  @Field()
+  total: string;
+
+  @Field(() => [String])
+  data: string[];
+
+  @Field()
+  limit: string;
+
+  @Field()
   start: string;
 }

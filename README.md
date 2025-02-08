@@ -5,7 +5,7 @@
 This is a recreational programming project to implement a [NestJS](https://github.com/nestjs/nest) GraphQL API
 adapter for the National Parks Service API.
 
-## Notes on initial setup
+## Notes on my initial project setup
 
 The source tree was generated with:
 
@@ -20,6 +20,8 @@ GraphQL dependencies were installed with:
 npm i @nestjs/graphql @nestjs/apollo @apollo/server graphql
 ```
 
+See [Nest GraphQL quick start](https://docs.nestjs.com/graphql/quick-start)).
+
 A new module, service, and resolver was added for NPS specific code:
 
 ```bash
@@ -28,7 +30,19 @@ npx nest g service nps
 npx nest g resolver nps
 ```
 
-See [Nest GraphQL quick start](https://docs.nestjs.com/graphql/quick-start)).
+### Model generation from NPS swagger.json
+
+I found [swagger.json](https://www.nps.gov/subjects/developer/customcf/swagger.json) by inspecting the browser requests made on the [API doc page](https://www.nps.gov/subjects/developer/api-documentation.htm#/).
+
+I then converted the Swagger 2 file to OpenAPI 3:
+
+```bash
+npx swagger2openapi swagger.json > nps_openapi.json
+```
+
+I then generated NestJS GraphQL models in <./src/nps/nps.types.ts> using Github Copilot within VSCode:
+
+"Using #file:nps_openapi.json generate all models in #file:nps.types.ts.
 
 ## Compile and run the project
 

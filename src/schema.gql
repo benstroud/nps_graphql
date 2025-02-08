@@ -1,0 +1,132 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Address {
+  countryCode: String!
+  city: String!
+  provinceTerritoryCode: String!
+  postalCode: String!
+  type: String!
+  line1: String!
+  stateCode: String!
+  line2: String
+  line3: String
+}
+
+type EntranceFee {
+  cost: String!
+  description: String!
+  title: String!
+}
+
+type Topic {
+  id: String!
+  name: String!
+}
+
+type Multimedia {
+  title: String!
+  id: String!
+  type: String!
+  url: String!
+}
+
+type Activity {
+  id: String!
+  name: String!
+}
+
+type OperatingHourStandardHours {
+  wednesday: String!
+  monday: String!
+  thursday: String!
+  sunday: String!
+  tuesday: String!
+  friday: String!
+  saturday: String!
+}
+
+type OperatingHourException {
+  startDate: String!
+  name: String!
+  endDate: String!
+  exceptionHours: OperatingHourStandardHours!
+}
+
+type OperatingHour {
+  exceptions: [OperatingHourException!]!
+  description: String!
+  standardHours: OperatingHourStandardHours!
+  name: String!
+}
+
+type PhoneNumber {
+  phoneNumber: String!
+  description: String!
+  extension: String!
+  type: String!
+}
+
+type EmailAddress {
+  description: String!
+  emailAddress: String!
+}
+
+type Contact {
+  phoneNumbers: [PhoneNumber!]!
+  emailAddresses: [EmailAddress!]!
+}
+
+type EntrancePass {
+  cost: String!
+  description: String!
+  title: String!
+}
+
+type Image {
+  credit: String!
+  title: String!
+  altText: String!
+  caption: String!
+  url: String!
+}
+
+type Park {
+  states: [String!]!
+  weatherInfo: String!
+  directionsInfo: String!
+  addresses: [Address!]!
+  entranceFees: [EntranceFee!]!
+  topics: [Topic!]!
+  multimedia: [Multimedia!]!
+  name: String!
+  latitude: String!
+  longitude: String!
+  activities: [Activity!]!
+  operatingHours: [OperatingHour!]!
+  url: String!
+  contacts: Contact!
+  entrancePasses: [EntrancePass!]!
+  parkCode: String!
+  designation: String!
+  images: [Image!]!
+  relevanceScore: Float!
+  fullName: String!
+  latLong: String!
+  id: String!
+  directionsUrl: String!
+  description: String!
+}
+
+type ParksResponse {
+  total: String!
+  data: [Park!]!
+  limit: String!
+  start: String!
+}
+
+type Query {
+  hello: String!
+  getParks(parkCode: String, stateCode: String, limit: Float): ParksResponse!
+}

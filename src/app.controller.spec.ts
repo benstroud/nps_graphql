@@ -16,7 +16,9 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+      expect(appController.getHello()).toBe(
+        'This is the NPS GraphQL adapter API. Visit /graphql to explore the API.',
+      );
     });
   });
 });

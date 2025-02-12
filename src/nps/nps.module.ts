@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { NpsService } from './nps.service';
-import { ParksResolver } from './nps.resolver';
+import { NpsResolver } from './nps.resolver';
 
 @Module({
-  providers: [NpsService, ParksResolver],
+  providers: [NpsService, NpsResolver],
 })
 export class NpsModule {}

@@ -2,6 +2,40 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Activity {
+  id: String!
+  name: String!
+}
+
+type ActivityResponse {
+  total: String!
+  data: [Activity!]!
+  limit: String!
+  start: String!
+}
+
+type ActivityParkItem {
+  states: String!
+  fullName: String!
+  url: String!
+  parkCode: String!
+  designation: String!
+  name: String!
+}
+
+type ActivityPark {
+  id: String!
+  name: String!
+  parks: [ActivityParkItem!]!
+}
+
+type ActivityParkResponse {
+  total: String!
+  data: [ActivityPark!]!
+  limit: String!
+  start: String!
+}
+
 type Address {
   countryCode: String!
   city: String!
@@ -14,10 +48,413 @@ type Address {
   line3: String
 }
 
+type RelatedRoadEvent {
+  title: String!
+  id: String!
+  type: String!
+  url: String!
+}
+
+type AlertItem {
+  category: String!
+  description: String!
+  id: String!
+  title: String!
+  parkCode: String!
+  url: String!
+  lastIndexedDate: String!
+  relatedRoadEvents: [RelatedRoadEvent!]!
+}
+
+type AlertResponse {
+  total: String!
+  data: [AlertItem!]!
+  limit: String!
+  start: String!
+}
+
+type AmenityItem {
+  id: String!
+  name: String!
+}
+
+type AmenitiesParksPlacesPark {
+  title: String!
+  url: String!
+  id: String!
+}
+
+type AmenitiesParksPlacesItem {
+  states: String!
+  parkCode: String!
+  designation: String!
+  fullName: String!
+  places: [AmenitiesParksPlacesPark!]!
+  url: String!
+  name: String!
+}
+
+type AmenitiesParksPlacesResponse {
+  total: String!
+  data: [AmenitiesParksPlacesItem!]!
+  limit: String!
+  start: String!
+}
+
+type VisitorCenterItem {
+  id: String!
+  name: String!
+  url: String!
+}
+
+type AmenitiesParksVisitorCentersItem {
+  states: String!
+  fullName: String!
+  parkCode: String!
+  designation: String!
+  name: String!
+  url: String!
+  visitorcenters: [VisitorCenterItem!]!
+}
+
+type AmenitiesParksVisitorCentersResponse {
+  total: String!
+  data: [AmenitiesParksVisitorCentersItem!]!
+  limit: String!
+  start: String!
+}
+
+type RelatedParkItem {
+  states: String!
+  parkCode: String!
+  designation: String!
+  fullName: String!
+  url: String!
+  name: String!
+}
+
+type ListingImageItem {
+  url: String!
+  credit: String!
+  altText: String!
+  title: String!
+  description: String!
+  caption: String!
+}
+
+type ArticleItem {
+  id: String!
+  title: String!
+  url: String!
+  listingImage: ListingImageItem!
+  listingDescription: String!
+  relatedParks: [RelatedParkItem!]!
+  geometryPoiId: String!
+  latitude: String!
+  longitude: String!
+  latLong: String!
+}
+
+type ArticleResponse {
+  total: String!
+  data: [ArticleItem!]!
+  limit: String!
+  start: String!
+}
+
+type Accessibility {
+  wheelchairaccess: String!
+  internetinfo: String!
+  rvallowed: Float!
+  cellphoneinfo: String!
+  firestovepolicy: String!
+  rvmaxlength: Float!
+  additionalinfo: String!
+  trailermaxlength: Float!
+  adainfo: String!
+  rvinfo: String!
+  accessroads: [String!]!
+  trailerallowed: Float!
+  classifications: [String!]!
+}
+
+type Amenity {
+  trashrecyclingcollection: String!
+  toilets: [String!]!
+  internetconnectivity: Boolean!
+  showers: [String!]!
+  cellphonereception: Boolean!
+  laundry: Boolean!
+  amphitheater: String!
+  dumpstation: Boolean!
+  campstore: Boolean!
+  stafforvolunteerhostonsite: String!
+  potablewater: [String!]!
+  iceavailableforsale: Boolean!
+  firewoodforsale: Boolean!
+  ampitheater: String!
+  foodstoragelockers: String!
+}
+
+type Campsite {
+  other: Float!
+  group: Float!
+  horse: Float!
+  totalsites: Float!
+  tentonly: Float!
+  electricalhookups: Float!
+  rvonly: Float!
+  walkboatto: Float!
+}
+
+type CampgroundItem {
+  accessibility: [Accessibility!]!
+  addresses: [Address!]!
+  amenities: [Amenity!]!
+  campsites: [Campsite!]!
+  contacts: [Contact!]!
+  description: String!
+  directionsoverview: String!
+  directionsUrl: String!
+  fees: String
+  geometryPoiId: String!
+  id: Float!
+  images: String
+  latLong: String!
+  latitude: String!
+  longitude: String!
+  multimedia: [Multimedia!]!
+  name: String!
+  operatingHours: String
+  parkCode: String!
+  regulationsoverview: String
+  regulationsurl: String!
+  relevanceScore: Float!
+  reservationsdescription: String!
+  reservationsitesfirstcome: String!
+  reservationssitesreservable: String!
+  reservationsurl: String!
+  weatheroverview: String!
+}
+
+type CampgroundResponse {
+  total: String!
+  data: [CampgroundItem!]!
+  limit: String!
+  start: String!
+}
+
+type Contact {
+  phoneNumbers: [PhoneNumber!]!
+  emailAddresses: [EmailAddress!]!
+}
+
+type EmailAddress {
+  description: String!
+  emailAddress: String!
+}
+
 type EntranceFee {
   cost: String!
   description: String!
   title: String!
+}
+
+type EntrancePass {
+  cost: String!
+  description: String!
+  title: String!
+}
+
+type EventTime {
+  timestart: String!
+  timeend: String!
+  sunsetend: Boolean!
+  sunrisestart: Boolean!
+}
+
+type EventImage {
+  altText: String!
+  caption: String!
+  credit: String!
+  imageId: String!
+  ordinal: String!
+  path: String!
+  title: String!
+  url: String!
+}
+
+type EventItem {
+  category: String!
+  categoryid: String!
+  contactemailaddress: String!
+  contactname: String!
+  contacttelephonenumber: String!
+  createuser: String!
+  date: String!
+  dateend: String!
+  dates: [String!]!
+  datestart: String!
+  datetimecreated: String!
+  datetimeupdated: String!
+  description: String!
+  eventid: String!
+  feeinfo: String!
+  geometryPoiId: String!
+  id: String!
+  imageidlist: String!
+  images: [EventImage!]!
+  infourl: String!
+  isallday: Boolean!
+  isfree: Boolean!
+  isrecurring: Boolean!
+  isregresrequired: Boolean!
+  latitude: Float!
+  location: String!
+  longitude: Float!
+  organizationname: String!
+  parkfullname: String!
+  portalname: String!
+  recurrencedateend: String!
+  recurrencedatestart: String!
+  recurrencerule: String!
+  regresinfo: String!
+  regresurl: String!
+  sitecode: String!
+  sitetype: String!
+  subjectname: String!
+  tags: [String!]!
+  timeinfo: String!
+  times: [EventTime!]!
+  title: String!
+  types: [String!]!
+}
+
+type EventResponse {
+  total: String!
+  data: [EventItem!]!
+  limit: String!
+  start: String!
+}
+
+type DateDetail {
+  day: Float!
+  holiday: String!
+  month: Float!
+}
+
+type Fee {
+  cost: String!
+  description: String!
+  endDate: DateDetail!
+  entranceFeeType: String!
+  exceptions: String!
+  id: String!
+  informationUrl: String!
+  payGovPurchaseUrl: String!
+  paymentDescription: String!
+  purchaseUrl: String!
+  recGovPurchaseUrl: String!
+  startDate: DateDetail!
+  timedEntryLocation: String!
+  timedEntryShortDescription: String!
+}
+
+type PassImage {
+  altText: String!
+  caption: String!
+  credit: String!
+  title: String!
+  url: String!
+}
+
+type Pass {
+  category: String!
+  cost: String!
+  description: String!
+  exceptions: String!
+  id: String!
+  image: [PassImage!]!
+  informationUrl: String!
+  payGovPurchaseUrl: String!
+  paymentDescription: String!
+  npsGovPurchaseUrl: String!
+  recGovPurchaseUrl: String!
+}
+
+type RelatedMultiSitePassImage {
+  credit: String!
+  title: String!
+  altText: String!
+  caption: String!
+  url: String!
+}
+
+type PurchaseLocation {
+  type: String!
+  id: String!
+  title: String!
+  paymentMethod: String!
+}
+
+type RelatedPark {
+  states: String!
+  fullName: String!
+  url: String!
+  parkCode: String!
+  designation: String!
+  name: String!
+}
+
+type RelatedMultiSitePass {
+  title: String!
+  audience: String!
+  type: String!
+  cost: String!
+  description: String!
+  images: [RelatedMultiSitePassImage!]!
+  purchaseLocations: [PurchaseLocation!]!
+  relatedParks: [RelatedPark!]!
+}
+
+type FeesPassesResponse {
+  total: String!
+  data: [String!]!
+  limit: String!
+  start: String!
+}
+
+type Image {
+  credit: String!
+  title: String!
+  altText: String!
+  caption: String!
+  url: String!
+}
+
+type CommonCore {
+  statestandards: String!
+  mathstandards: [String!]!
+  additionalstandards: String!
+  elastandards: [String!]!
+}
+
+type LessonPlanResponse {
+  total: String!
+  data: [String!]!
+  limit: String!
+  start: String!
+}
+
+type Geometry {
+  type: String!
+  coordinates: [[[Float!]!]!]!
+}
+
+type MapdataParkboundaryResponse {
+  type: String!
+  id: String!
+  geometry: Geometry!
 }
 
 type Multimedia {
@@ -25,6 +462,64 @@ type Multimedia {
   id: String!
   type: String!
   url: String!
+}
+
+type SplashImage {
+  url: String!
+}
+
+type Version {
+  fileSize: Float!
+  fileType: String!
+  url: String!
+}
+
+type MultimediaAudioResponse {
+  total: String!
+  data: [String!]!
+  limit: String!
+  start: String!
+}
+
+type MultimediaGalleriesImage {
+  url: String!
+  altText: String!
+  title: String!
+  description: String!
+}
+
+type MultimediaGalleriesRelatedPark {
+  states: String!
+  parkCode: String!
+  designation: String!
+  fullName: String!
+  url: String!
+  name: String!
+}
+
+type MultimediaGalleriesConstraintsInfo {
+  constraint: String!
+  grantingRights: String!
+}
+
+type MultimediaGalleriesItem {
+  id: String!
+  url: String!
+  title: String!
+  description: String!
+  images: [MultimediaGalleriesImage!]!
+  relatedParks: [MultimediaGalleriesRelatedPark!]!
+  tags: [String!]!
+  assetCount: Float!
+  constraintsInfo: MultimediaGalleriesConstraintsInfo!
+  copyright: String!
+}
+
+type MultimediaGalleriesResponse {
+  total: String!
+  data: [MultimediaGalleriesItem!]!
+  limit: String!
+  start: String!
 }
 
 type OperatingHourStandardHours {
@@ -37,13 +532,6 @@ type OperatingHourStandardHours {
   saturday: String!
 }
 
-type OperatingHourException {
-  startDate: String!
-  name: String!
-  endDate: String!
-  exceptionHours: OperatingHourStandardHours!
-}
-
 type OperatingHour {
   exceptions: [OperatingHourException!]!
   description: String!
@@ -51,49 +539,11 @@ type OperatingHour {
   name: String!
 }
 
-type PhoneNumber {
-  phoneNumber: String!
-  description: String!
-  extension: String!
-  type: String!
-}
-
-type EmailAddress {
-  description: String!
-  emailAddress: String!
-}
-
-type Contact {
-  phoneNumbers: [PhoneNumber!]!
-  emailAddresses: [EmailAddress!]!
-}
-
-type EntrancePass {
-  cost: String!
-  description: String!
-  title: String!
-}
-
-type Image {
-  credit: String!
-  title: String!
-  altText: String!
-  caption: String!
-  url: String!
-}
-
-type ParksResponse {
-  total: String!
-  data: [Park!]!
-  limit: String!
-  start: String!
-}
-
-type Activity {
-  total: String!
-  data: [String!]!
-  limit: String!
-  start: String!
+type OperatingHourException {
+  startDate: String!
+  name: String!
+  endDate: String!
+  exceptionHours: OperatingHourStandardHours!
 }
 
 type Park {
@@ -123,6 +573,20 @@ type Park {
   description: String!
 }
 
+type ParksResponse {
+  total: String!
+  data: [Park!]!
+  limit: String!
+  start: String!
+}
+
+type PhoneNumber {
+  phoneNumber: String!
+  description: String!
+  extension: String!
+  type: String!
+}
+
 type Topic {
   total: String!
   data: [String!]!
@@ -132,5 +596,18 @@ type Topic {
 
 type Query {
   hello: String!
-  getParks(parkCode: String, stateCode: String, limit: Float): ParksResponse!
+  getActivities(id: String, q: String, limit: Float, start: Float, sort: [String]): ActivityResponse!
+  getActivityParks(id: String, q: String, limit: Float, start: Float, sort: [String]): ActivityParkResponse!
+  getAlerts(parkCode: String, stateCode: String, limit: Float, start: Float, q: String): AlertResponse!
+  getParks(parkCode: String, stateCode: String, limit: Float, start: Float, q: String, sort: [String]): ParksResponse!
+  getAmenitiesParkPlaces(parkCode: String, id: [String], q: String, limit: Float, start: Float, sort: [String]): AmenitiesParksPlacesResponse!
+  getAmenitiesParkVisitorsCenters(parkCode: String, id: [String], q: String, limit: Float, start: Float, sort: [String]): AmenitiesParksVisitorCentersResponse!
+  getArticles(parkCode: String, stateCode: String, limit: Float, start: Float, q: String): ArticleResponse!
+  getCampgrounds(parkCode: String, stateCode: String, limit: Float, start: Float, q: String, sort: [String]): CampgroundResponse!
+  getEvents(parkCode: String, organization: String, subject: String, portal: String, tagsAll: String, tagsOne: String, tagsNone: String, dateStart: String, dateEnd: String, eventType: String, id: String, q: String, pageSize: Float, pageNumber: Float, expandRecurring: Boolean): EventResponse!
+  getFeesPasses(parkCode: String, start: Float, limit: Float, q: String, sort: String, stateCode: String): FeesPassesResponse!
+  getLessonPlans(parkCode: String, stateCode: String, limit: Float, start: Float, q: String, sort: [String]): LessonPlanResponse!
+  getMapdataParkboundaries(sitecode: String!): MapdataParkboundaryResponse!
+  getMultimediaAudios(parkCode: String, stateCode: String, limit: Float, start: Float, q: String): MultimediaAudioResponse!
+  getMultimediaGalleries(parkCode: String, stateCode: String, limit: Float, start: Float, q: String): MultimediaGalleriesResponse!
 }
